@@ -11,16 +11,10 @@ import java.util.List;
 
 public class StudentRespository {
 
-    private HashMap<String, Student> studentHashMap;
-    private HashMap<String, Teacher> teacherHashMap;
-    private HashMap<String, List<String>> pairHashMap;
+    private HashMap<String, Student> studentHashMap = new HashMap<String, Student>();;
+    private HashMap<String, Teacher> teacherHashMap = new HashMap<String, Teacher>();;
+    private HashMap<String, List<String>> pairHashMap = new HashMap<String, List<String>>();;
 
-    public StudentRespository()
-    {
-        this.studentHashMap = new HashMap<String, Student>();
-        this.teacherHashMap = new HashMap<String, Teacher>();
-        this.pairHashMap = new HashMap<String, List<String>>();
-    }
 
     public void addStudentRepo(Student student)
     {

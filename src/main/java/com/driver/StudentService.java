@@ -13,12 +13,12 @@ public class StudentService {
     @Autowired
     StudentRespository studentRespository;
 
-    public void addStudentService(Student student)
+    public void addStudent(Student student)
     {
         studentRespository.addStudentRepo(student);
     }
 
-    public void addTeacherService(Teacher teacher)
+    public void addTeacher(Teacher teacher)
     {
         studentRespository.addTeacherRepo(teacher);
     }
@@ -28,14 +28,14 @@ public class StudentService {
         studentRespository.addStudentTeacherPairRepo(student,teacher);
     }
 
-    public Student getStudentByNameService(String name)
+    public Student getStudentByNameService(String stdname)
     {
-        return studentRespository.getStudentByNameRepo(name);
+        return studentRespository.getStudentByNameRepo(stdname);
     }
 
-    public Teacher getTeacherByNameService(String name)
+    public Teacher getTeacherByNameService(String tname)
     {
-        return studentRespository.getTeacherByNameRepo(name);
+        return studentRespository.getTeacherByNameRepo(tname);
     }
 
     public List<String> getStudentsByTeacherNameService(String teacher)

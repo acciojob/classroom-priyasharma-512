@@ -36,7 +36,7 @@ public class StudentRespository {
     {
         if(studentHashMap.containsKey(student) && teacherHashMap.containsKey(teacher))
         {
-            List<String> existingpair = new ArrayList<>();
+            List<String> existingpair = new ArrayList<String>();
             if(pairHashMap.containsKey(teacher))
                 existingpair = pairHashMap.get(teacher);
             existingpair.add(student);
@@ -49,14 +49,14 @@ public class StudentRespository {
         return studentHashMap.get(student);
     }
 
-    public Teacher getTeacherByNameRepo(String director)
+    public Teacher getTeacherByNameRepo(String teacher)
     {
-        return teacherHashMap.get(director);
+        return teacherHashMap.get(teacher);
     }
 
     public List<String> getStudentsByTeacherNameRepo(String teacher)
     {
-        List<String> studentsList = new ArrayList<>();
+        List<String> studentsList = new ArrayList<String>();
         if(teacherHashMap.containsKey(teacher))
             studentsList = pairHashMap.get(teacher);
         return studentsList;
@@ -70,7 +70,7 @@ public class StudentRespository {
     public void deleteTeacherByNameRepo(String teacher)
     {
         List<String> std = new ArrayList<String>();
-        if(teacherHashMap.containsKey(teacher))
+        if(pairHashMap.containsKey(teacher))
         {
             std = pairHashMap.get(teacher);
             for(String student : std)

@@ -25,7 +25,7 @@ public class StudentService {
 
     public void addStudentTeacherPairService(String student,String teacher)
     {
-        studentRespository.addStudentTeacherPairServiceRepo(student,teacher);
+        studentRespository.addStudentTeacherPairRepo(student,teacher);
     }
 
     public Student getStudentByNameService(String name)
@@ -35,7 +35,7 @@ public class StudentService {
 
     public Teacher getTeacherByNameService(String name)
     {
-        return studentRespository.getTeacherByNameServiceRepo(name);
+        return studentRespository.getTeacherByNameRepo(name);
     }
 
     public List<String> getStudentsByTeacherNameService(String teacher)

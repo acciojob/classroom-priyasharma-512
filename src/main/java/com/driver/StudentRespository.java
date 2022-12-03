@@ -11,10 +11,16 @@ import java.util.List;
 
 public class StudentRespository {
 
-    private HashMap<String, Student> studentHashMap = new HashMap<String, Student>();;
-    private HashMap<String, Teacher> teacherHashMap = new HashMap<String, Teacher>();;
-    private HashMap<String, List<String>> pairHashMap = new HashMap<String, List<String>>();;
+    private HashMap<String, Student> studentHashMap;
+    private HashMap<String, Teacher> teacherHashMap;
+    private HashMap<String, List<String>> pairHashMap;
 
+    public StudentRespository()
+    {
+        this.studentHashMap = new HashMap<String, Student>();
+        this.teacherHashMap = new HashMap<String, Teacher>();
+        this.pairHashMap = new HashMap<String, List<String>>();
+    }
 
     public void addStudentRepo(Student student)
     {
@@ -26,7 +32,7 @@ public class StudentRespository {
         teacherHashMap.put(teacher.getName(),teacher);
     }
 
-    public void addStudentTeacherPairServiceRepo(String student,String teacher)
+    public void addStudentTeacherPairRepo(String student,String teacher)
     {
         if(studentHashMap.containsKey(student) && teacherHashMap.containsKey(teacher))
         {
@@ -43,7 +49,7 @@ public class StudentRespository {
         return studentHashMap.get(student);
     }
 
-    public Teacher getTeacherByNameServiceRepo(String director)
+    public Teacher getTeacherByNameRepo(String director)
     {
         return teacherHashMap.get(director);
     }
@@ -63,11 +69,11 @@ public class StudentRespository {
 
     public void deleteTeacherByNameRepo(String teacher)
     {
-        List<String> students = new ArrayList<>();
+        List<String> std = new ArrayList<String>();
         if(teacherHashMap.containsKey(teacher))
         {
-            students = pairHashMap.get(teacher);
-            for(String student : students)
+            std = pairHashMap.get(teacher);
+            for(String student : std)
             {
                 if(studentHashMap.containsKey(student))
                     studentHashMap.remove(student);

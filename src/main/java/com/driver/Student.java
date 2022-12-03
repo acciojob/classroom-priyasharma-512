@@ -1,6 +1,8 @@
 package com.driver;
 
+import org.springframework.stereotype.Component;
 
+@Component
 public class Student {
 
     private String name;

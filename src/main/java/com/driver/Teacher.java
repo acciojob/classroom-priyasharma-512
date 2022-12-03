@@ -2,7 +2,7 @@ package com.driver;
 
 import org.springframework.stereotype.Component;
 
-@Component
+
 public class Teacher {
 
     private String name;
@@ -10,6 +10,12 @@ public class Teacher {
     private int numberOfStudents;
 
     private int age;
+
+    public Teacher(String name, int numberOfStudents, int age) {
+        this.name = name;
+        this.numberOfStudents = numberOfStudents;
+        this.age = age;
+    }
 
     public Teacher() {
 
